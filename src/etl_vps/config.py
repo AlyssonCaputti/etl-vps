@@ -1,4 +1,7 @@
+from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 
 class DatabaseSettings(BaseSettings):
@@ -12,7 +15,7 @@ class DatabaseSettings(BaseSettings):
 
     # 2. Config: de onde ler e como mapear nomes.
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=PROJECT_ROOT / ".env",
         env_prefix="DB_",  # host → procura DB_HOST no .env automaticamente
     )
 
