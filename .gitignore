@@ -1,0 +1,15 @@
+# NUNCA VERSIONAR
+.env
+
+# AMBIENTE VIRTUAL
+.venv
+
+# Caches e artefatos do Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# Logs
+*.log
