@@ -1,8 +1,8 @@
 [project]
 name = "etl-vps"
 version = "0.1.0"
-description = "ETL SAP → MySQL reescrito nível sênior"
-requires-python = ">=3.12"
+description = "ETL SAP → MySQL"
+requires-python = ">=3.12,<3.15"
 dependencies = [
     "pandas",
     "pydantic",
@@ -10,6 +10,7 @@ dependencies = [
     "python-dotenv",
     "mysql-connector-python",
     "openpyxl",
+    "pyarrow",
 ]
 
 [build-system]

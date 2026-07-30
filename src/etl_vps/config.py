@@ -2,7 +2,7 @@ from pathlib import Path
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
 class PathSettings(BaseModel):
@@ -16,8 +16,7 @@ class PathSettings(BaseModel):
 
 class DatabaseSettings(BaseSettings):
     # 1. Cada atributo = uma variável de ambiente esperada.
-    #    O type hint (: str, : int) é a REGRA de validação.
-    host: str  # obrigatório — sem default → erro se faltar
+    host: str
     port: int = 3306
     user: str
     password: str
