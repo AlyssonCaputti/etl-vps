@@ -1,5 +1,7 @@
 import pandas as pd
 
+input_path = r""
+
 rename_map = {
     "CardCode": "codigo_do_pn",
     "CardName": "nome_do_pn",
@@ -40,11 +42,9 @@ rename_map = {
     "DataBoletoMaisAntigoInadimplente": "dt_boleto_inadimplente",
 }
 
-input_path = r"P:\Marketing\Marketing 2026\Dados - Dashboards\dados integração\clientes\dataClientesVPS.xlsx"
+df = pd.read_excel(input_path, usecols=[name_columns for name_columns in rename_map])
 
-df = pd.read_excel(input_path, usecols=[i for i in rename_map])
-print(df.head())
-
+df = df.rename(columns=rename_map)  # Rename the column
 
 """
 def transforma_clientes(df: pd.DataFrame) -> pd.DataFrame:
@@ -54,5 +54,4 @@ def transforma_clientes(df: pd.DataFrame) -> pd.DataFrame:
     
     
     return df.DataFrame
-
 """
